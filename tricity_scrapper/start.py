@@ -1,11 +1,6 @@
-from network import create_session
-from scrapper import get_links_to_products
+from links_manager import get_items_links
 
-async def start():
-  session = await create_session()
-  html = await session.get_text('https://ogloszenia.trojmiasto.pl/motoryzacja-sprzedam/?strona=0')
-  links = get_links_to_products(html)
-
-  print(links)
-
-  await session.close()
+async def main():
+  print('Scrapping items links...')
+  links = await get_items_links()
+  print(f'Was scrapped {len(links)} items!')

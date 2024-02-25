@@ -1,5 +1,5 @@
 
 import asyncio
-from start import start
+from start import main
 
-asyncio.run(start())
+asyncio.run(main())
